@@ -37,6 +37,10 @@ $empfee = strip_tags(trim($_POST['facfee']));
 $earnleave = 0;
 $sickleave = 0;
 $casualleave = 0;
+
+$maternityleave = 0;
+$paternityleave = 0;
+$annualleave = 0;
 if(empty($empname) || empty($uname) || empty($mailid) || empty($doj) || empty($dob))
 	{
 		$errmsg.="One or more fields are empty...";
@@ -85,6 +89,10 @@ if($conn->query($sql2) == TRUE)
 						$earnleave = $row2['SetEarnLeave'];
 						$sickleave = $row2['SetSickLeave'];
 						$casualleave = $row2['SetCasualLeave'];
+						
+						$maternityleave = $row2['SetMaternityLeave'];
+						$paternityleave = $row2['SetPaternityLeave'];
+						$annualleave = $row2['SetAnnualLeave'];
 					}
 			}
 	}
@@ -96,7 +104,7 @@ else
 	{
 		echo "<div class = 'reg-form'>";
 		$pw = $uname;
-		$sql = "INSERT INTO employees (UserName,EmpPass,EmpName,Dept,EarnLeave,SickLeave,CasualLeave,EmpEmail,DateOfJoin,Designation,EmpType,EmpFee,DateOfBirth) VALUES "."('".$uname."','".$pw."','".$empname."','".$dept."','".$earnleave."','".$sickleave."','".$casualleave."','".$mailid."','".$doj."','".$designation."','".$emptype."','".$empfee."','".$dob."')";
+		$sql = "INSERT INTO employees (UserName,EmpPass,EmpName,Dept,EarnLeave,SickLeave,CasualLeave,EmpEmail,DateOfJoin,Designation,EmpType,EmpFee,DateOfBirth,MaternityLeave,PaternityLeave,AnnualLeave) VALUES "."('".$uname."','".$pw."','".$empname."','".$dept."','".$earnleave."','".$sickleave."','".$casualleave."','".$mailid."','".$doj."','".$designation."','".$emptype."','".$empfee."','".$dob."','".$maternityleave."','".$paternityleave."','".$annualleave."')";                        
 		if ($conn->query($sql) === TRUE) {
 			echo "<center>";
 			echo "<strong> Registration Successful !</strong><br/><br/>";
