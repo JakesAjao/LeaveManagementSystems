@@ -1,7 +1,7 @@
 <?php
 require_once "Mail.php";
 function mailer($recipient,$msg){
-$from = '<your_user_name@gmail.com>';
+$from = '<jacajao09@gmail.com>';
 $to = '<'.$recipient.'>';
 $subject = 'Password Reset Key For '.$recipient;
 $body = $msg;
@@ -16,8 +16,8 @@ $smtp = Mail::factory('smtp', array(
         'host' => 'ssl://smtp.gmail.com',
         'port' => '465',
         'auth' => true,
-        'username' => 'your_user_name@gmail.com',
-        'password' => 'your_password'
+        'username' => 'jacajao09@gmail.com',
+        'password' => 'Ajasco09_'
     ));
 
 $mail = $smtp->send($to, $headers, $body);
