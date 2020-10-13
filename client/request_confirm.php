@@ -26,7 +26,7 @@ if(isset($user))
 	$designation = $_POST['designation'];
 	$emptype = $_POST['emptype'];
 	$empfee = $_POST['empfee'];
-	$value1 = $_POST['value1'];
+/* 	$value1 = $_POST['value1'];
 	$value2 = $_POST['value2'];
 	$value3 = $_POST['value3'];
 	$value4 = $_POST['value4'];
@@ -46,7 +46,7 @@ if(isset($user))
 	$value18 = $_POST['value18'];
 	$value19 = $_POST['value19'];
 	$value20 = $_POST['value20'];
-	$value21 = $_POST['value21'];
+	$value21 = $_POST['value21']; */
 	$leavereason = $_POST['leavereason'];
 	$dept = $_POST['dept'];
 		if(!empty($leavedays))
@@ -237,7 +237,7 @@ $pdf_content='
 			<table border="0" cellspacing="1" cellpadding="2">
 			<tr id="hdRow">
 				<td width="20%"><img src="ddu_nadiad.jpg" height = 50 width = 50></td>				
-				<td width="30%" align="center">DHARMSINH DESAI UNIVERSITY (State University)<br/>College Road, Nadiad-387001</td>
+				<td width="30%" align="center">UNIVERSITY OF LAGOS<br/>YABA-AKOKA, LAGOS</td>
 				</tr>
 			</table>
 			</div>
@@ -255,42 +255,7 @@ $pdf_content='
 			<tr><th>No. Of Leave Days : </th><td>'.$leavedays.'</td></tr>
 			<tr><th>Reason For Leave : </th><td>'.$leavereason.'</td></tr>
 			<tr><th>Type Of Leave : </th><td>'.$leavetype.'</td></tr>
-				<table>
-					<tr><th>Date </th>
-					<th>Time</th>		
-					<th>Semester</th>
-					<th>Division/Batch</th>
-					<th>Room No.</th>
-					<th>Subject</th>
-					<th>Staff  Member Who Will Engage Class</th></tr>
-					<tr>
-					<td>'.$value1.'</td>
-					<td>'.$value2.'</td>
-					<td>'.$value3.'</td>
-					<td>'.$value4.'</td>
-					<td>'.$value5.'</td>
-					<td>'.$value6.'</td>
-					<td>'.$value7.'</td>
-					</tr>
-					<tr>
-					<td>'.$value8.'</td>
-					<td>'.$value9.'</td>
-					<td>'.$value10.'</td>
-					<td>'.$value11.'</td>
-					<td>'.$value12.'</td>
-					<td>'.$value13.'</td>
-					<td>'.$value14.'</td>
-					</tr>
-					<tr>
-					<td>'.$value15.'</td>
-					<td>'.$value16.'</td>
-					<td>'.$value17.'</td>
-					<td>'.$value18.'</td>
-					<td>'.$value19.'</td>
-					<td>'.$value20.'</td>
-					<td>'.$value21.'</td>
-					</tr>
-				</table>
+				
 			</table></div></body></html>'
 			;
 			$name = $user.$leavedate.$leavetype.$end.'.pdf';

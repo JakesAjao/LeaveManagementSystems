@@ -23,13 +23,12 @@ if(isset($_SESSION['user']))
 						echo "<tr><th>Email ID : </th><td>".$row["EmpEmail"]."</td></tr>";
 						echo "<tr><th>Employee Name : </th><td>".$row["EmpName"]."</td></tr>";
 						echo "<tr><th>Department : </th><td>".$row["Dept"]."</td></tr>";
-						echo "<tr><th>Earn Leave : </th><td>".$row["EarnLeave"]."</td></tr>";
+					/* 	echo "<tr><th>Earn Leave : </th><td>".$row["EarnLeave"]."</td></tr>"; */
 						echo "<tr><th>Sick Leave : </th><td>".$row["SickLeave"]."</td></tr>";
-						echo "<tr><th>Casual Leave : </th><td>".$row["CasualLeave"]."</td></tr>";
-						
-						echo "<tr><th>Maternity Leave : </th><td>".$row["EarnLeave"]."</td></tr>";
-						echo "<tr><th>Paternity Leave : </th><td>".$row["SickLeave"]."</td></tr>";
-						echo "<tr><th>Annual Leave : </th><td>".$row["CasualLeave"]."</td></tr>";
+						echo "<tr><th>Casual Leave : </th><td>".$row["CasualLeave"]."</td></tr>";						
+						echo "<tr><th>Maternity Leave : </th><td>".$row["MaternityLeave"]."</td></tr>";
+						echo "<tr><th>Paternity Leave : </th><td>".$row["PaternityLeave"]."</td></tr>";
+						echo "<tr><th>Annual Leave : </th><td>".$row["AnnualLeave"]."</td></tr>";
 						
 						echo "<tr><th>Date Of Joining : </th><td>".$row["DateOfJoin"]."</td></tr>";
 						echo "<tr><th>Current Time : </th><td><div id = 'clock'></div></td></tr>";

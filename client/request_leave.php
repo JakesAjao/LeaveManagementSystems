@@ -29,14 +29,14 @@ if(isset($_SESSION['user']))
 					{
 						echo "<button type = 'submit' name = 'type' value = 'Sick Leave' class = 'error-button shadow' disabled>Sick Leave</button>";
 					}
-				if($row['EarnLeave'] > 0)
+				/*if($row['EarnLeave'] > 0)
 					{
 					echo "<button type = 'submit' name = 'type' value = 'Earn Leave' class = 'login-button shadow'>Earn Leave</button>";	
 					}
 				else
 					{
 						echo "<button type = 'submit' name = 'type' value = 'Earn Leave' class = 'error-button shadow' disabled>Earn Leave</button>";
-					}
+					}*/
 				if($row['CasualLeave'] > 0)
 					{
 					echo "<button type = 'submit' name = 'type' value = 'Casual Leave' class = 'login-button shadow'>Casual Leave</button>";	

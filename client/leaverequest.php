@@ -85,45 +85,7 @@ if(isset($_SESSION['user']))
 			echo "<tr><th> * No Of Leave Days : </th><td><input type = 'number' min = '1' name = 'leavedays' class = 'textbox shadow selected' step = '1'></td></tr>";
 			echo "<tr><th> * Reason For Leave : </th><td><input type = 'text' name = 'leavereason' class = 'textbox shadow selected'></td></tr>";
 			
-			echo "<table>
-					<tr>
-					<th>Date </th>
-					<th>Time</th>		
-					<th>Semester</th>
-					<th>Division/Batch</th>
-					<th>Room No.</th>
-					<th>Subject</th>
-					<th>Staff  Member Who Will Engage Class</th>
-					</tr>
-					<tr>
-					<td><input type = 'text' name = 'value1' class = 'textbox shadow selected' style='width:90px;'></td>
-					<td><input type='text' name = 'value2' class = 'textbox shadow selected' style='width:100px;'></td>		
-					<td><input type='number' min = '1' max = '8' step = '1' name = 'value3' class = 'textbox shadow selected' style='width:40px;'></td>
-					<td><input type='text' name = 'value4' class = 'textbox shadow selected' style='width:50px;'></td>
-					<td><input type='text' name = 'value5' class = 'textbox shadow selected' style='width:100px;'></td>
-					<td><input type='text' name = 'value6' class = 'textbox shadow selected' style='width:50px;'></td>
-					<td><input type='text' name = 'value7' class = 'textbox shadow selected' style='width:50px;'></td>
-					</tr>
-					<tr>
-					<td><input type = 'text' name = 'value8' class = 'textbox shadow selected' style='width:90px;'></td>
-					<td><input type='text' name = 'value9' class = 'textbox shadow selected' style='width:100px;'></td>		
-					<td><input type='number' min = '1' max = '8' step = '1' name = 'value10' class = 'textbox shadow selected' style='width:40px;'></td>
-					<td><input type='text' name = 'value11' class = 'textbox shadow selected' style='width:50px;'></td>
-					<td><input type='text' name = 'value12' class = 'textbox shadow selected' style='width:100px;'></td>
-					<td><input type='text' name = 'value13' class = 'textbox shadow selected' style='width:50px;'></td>
-					<td><input type='text' name = 'value14' class = 'textbox shadow selected' style='width:50px;'></td>
-					</tr>
-					<tr>
-					<td><input type = 'text' name = 'value15' class = 'textbox shadow selected' style='width:90px;'></td>
-					<td><input type='text' name = 'value16' class = 'textbox shadow selected' style='width:100px;'></td>		
-					<td><input type='number' min = '1' max = '8' step = '1' name = 'value17' class = 'textbox shadow selected' style='width:40px;'></td>
-					<td><input type='text' name = 'value18' class = 'textbox shadow selected' style='width:50px;'></td>
-					<td><input type='text' name = 'value19' class = 'textbox shadow selected' style='width:100px;'></td>
-					<td><input type='text' name = 'value20' class = 'textbox shadow selected' style='width:50px;'></td>
-					<td><input type='text' name = 'value21' class = 'textbox shadow selected' style='width:50px;'></td>
-					</tr>
-					</font>
-					</table>";
+			
 			echo "<br/><tr><td><input type = 'submit' value = 'Request a Leave' class = 'login-button shadow'></td></tr>";
 			echo "</form>";
 			echo "</div>";
