@@ -25,7 +25,7 @@ if(isset($user))
 	$emptype = $_POST['emptype'];
 	$designation = $_POST['designation'];
 	$emptype = $_POST['emptype'];
-	$empfee = $_POST['empfee'];
+	$supervisor = $_POST['supervisor'];
 /* 	$value1 = $_POST['value1'];
 	$value2 = $_POST['value2'];
 	$value3 = $_POST['value3'];
@@ -250,7 +250,7 @@ $pdf_content='
 			<tr><th>Employee Designation : </th><td>'.$designation.'</td></tr>
 			<tr><th>Employment Type : </th><td>'.$emptype.'</td></tr>
 			<tr><th>Employee Department : </th><td>'.$dept.'</td></tr>
-			<tr><th>Employee Fee Structure : </th><td>'.$empfee.'</td></tr>
+			<tr><th>Employee Supervisor : </th><td>'.$supervisor.'</td></tr>
 			<tr><th>Starting Date Of Leave (yyyy-mm-dd): </th><td>'.$leavedate.'</td></tr>
 			<tr><th>No. Of Leave Days : </th><td>'.$leavedays.'</td></tr>
 			<tr><th>Reason For Leave : </th><td>'.$leavereason.'</td></tr>

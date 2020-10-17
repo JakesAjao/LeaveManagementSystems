@@ -26,7 +26,7 @@ if(isset($_SESSION['adminuser']))
 			if($_SESSION['adminuser'] == $row['username'])
 				{
 				
-				$sql2 = "SELECT e.Id,e.Dept,e.EmpName,el.EmpName,el.LeaveType,el.RequestDate,el.LeaveDays,el.StartDate,el.EndDate,el.id,el.Dept FROM employees e, emp_leaves el WHERE e.Dept = el.Dept AND e.Dept = '".$row['Dept']."' AND el.Status = 'Requested' AND e.EmpName = el.EmpName";
+				$sql2 = "SELECT e.Id,e.Dept,e.EmpName,el.EmpName,el.LeaveType,el.RequestDate,el.LeaveDays,el.StartDate,el.EndDate,el.id,el.Dept FROM employees e, emp_leaves el WHERE e.Dept = el.Dept AND e.Dept = '".$row['Dept']."' AND el.Status = 'Pending' AND e.EmpName = el.EmpName";
 				$result2 = $conn->query($sql2);
 				if($result2->num_rows > 0)
 					{

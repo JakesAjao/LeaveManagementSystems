@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header('location:index.php?err='.urlencode('You Have Logged Out Succesfully'));
+header('location:index.php?err='.urlencode('You Have Logged Out Successfully'));
 exit();
 ?>

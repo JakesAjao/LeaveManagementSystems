@@ -11,7 +11,7 @@ if(isset($_SESSION['adminuser']))
 	echo "<div class = 'background'>";
 	echo "<div class='textview'>";
 	echo "<center>";
-	echo "<h1>Leave Management System</h1>";
+	echo "<h1>Leave Management Systems</h1>";
 	include 'navi.php';
 	echo "<h2>Admin Login</h2>";
 	echo "<form name = 'login' action = 'validator.php' method = 'post' onsubmit = 'return valid()'>";

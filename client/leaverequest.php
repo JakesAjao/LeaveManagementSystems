@@ -25,7 +25,7 @@ if(isset($_SESSION['user']))
 			echo "<input type = 'hidden' name = 'designation' value = '".$row["Designation"]."'>";
 			echo "<input type = 'hidden' name = 'dept' value = '".$row["Dept"]."'>";
 			echo "<input type = 'hidden' name = 'emptype' value = '".$row["EmpType"]."'>";
-			echo "<input type = 'hidden' name = 'empfee' value = '".$row["EmpFee"]."'>";
+			echo "<input type = 'hidden' name = 'supervisor' value = '".$row["Supervisor"]."'>";
 			
 			echo "<tr><th> * Starting Date : </th>
 					<td>

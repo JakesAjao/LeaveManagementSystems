@@ -32,11 +32,13 @@ if(isset($_SESSION['adminuser']))
 <tr><td><div class = 'error'>*</div> Employee email id : </td><td><input type = 'text' name = 'mailid' class = 'reg-form-fields shadow selected' placeholder = 'Employee Email ID'></td></tr><br>
 <tr><td><div class = 'error'>*</div> Designation : </td><td><input type = 'text' name = 'designation' class = 'reg-form-fields shadow selected' placeholder = 'Employee Designation'></td></tr><br>
 <tr><td><div class = 'error'>*</div> Employment Type : </td><td><select name = 'factype' class = 'reg-form-fields shadow selected'>
-						<option>Permanent</option><option>Ad-hoc</option><option>Fix</option>
+						<option>Permanent</option><option>Consultant</option><option>Contract</option>
 				  </select>
-				  <select name = 'facfee' class = 'reg-form-fields shadow selected'>
-						<option>Grant In Aid</option><option>Self Finance</option>
-				  </select></td></tr><br>
+				</td></tr><br>
+	<tr><td><div class = 'error'>*</div> Supervisor : </td><td><select name = 'supervisor' class = 'reg-form-fields shadow selected'>
+						<option>Blessing</option><option>Sidi</option><option>Jacob</option>
+				  </select>
+				</td></tr><br>
 <tr><td><input type = 'submit' value = 'Register' class = 'registration shadow'></td></tr>
 </form>
 </table>

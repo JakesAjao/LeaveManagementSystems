@@ -33,7 +33,7 @@ $dob2 = strip_tags($dob2);
 $pass = $dob2;
 $designation = strip_tags(trim($_POST['designation']));
 $emptype = strip_tags(trim($_POST['factype']));
-$empfee = strip_tags(trim($_POST['facfee']));
+$supervisor = strip_tags(trim($_POST['supervisor']));
 $earnleave = 0;
 $sickleave = 0;
 $casualleave = 0;
@@ -104,7 +104,7 @@ else
 	{
 		echo "<div class = 'reg-form'>";
 		$pw = $uname;
-		$sql = "INSERT INTO employees (UserName,EmpPass,EmpName,Dept,EarnLeave,SickLeave,CasualLeave,EmpEmail,DateOfJoin,Designation,EmpType,EmpFee,DateOfBirth,MaternityLeave,PaternityLeave,AnnualLeave) VALUES "."('".$uname."','".$pw."','".$empname."','".$dept."','".$earnleave."','".$sickleave."','".$casualleave."','".$mailid."','".$doj."','".$designation."','".$emptype."','".$empfee."','".$dob."','".$maternityleave."','".$paternityleave."','".$annualleave."')";                        
+		$sql = "INSERT INTO employees (UserName,EmpPass,EmpName,Dept,EarnLeave,SickLeave,CasualLeave,EmpEmail,DateOfJoin,Designation,EmpType,Supervisor,DateOfBirth,MaternityLeave,PaternityLeave,AnnualLeave) VALUES "."('".$uname."','".$pw."','".$empname."','".$dept."','".$earnleave."','".$sickleave."','".$casualleave."','".$mailid."','".$doj."','".$designation."','".$emptype."','".$supervisor."','".$dob."','".$maternityleave."','".$paternityleave."','".$annualleave."')";                        
 		if ($conn->query($sql) === TRUE) {
 			echo "<center>";
 			echo "<strong> Registration Successful !</strong><br/><br/>";
@@ -115,7 +115,7 @@ else
 			echo "Email id : ".$mailid."<br/>";
 			echo "Date Of Joining : ".$doj."<br/>";
 			echo "Designation : ".$designation."<br/>";
-			echo "Employment Type : ".$emptype." ; ".$empfee."<br/>";
+			echo "Employment Type : ".$emptype." ; ".$supervisor."<br/>";
 			echo "Date Of Birth : ".$dob2."<br/>";
 			$msg = "Registration Successful! \n\nUsername : ".$uname."\nEmployee Name : ".$empname."\nPassword : ".$pass."\nDepartment : ".$dept."\nEmail ID : ".$mailid."\nDate Of Joining (yyyy/mm/dd): ".$doj."\n\n\nThanks For Registering with us\n\n\n\nRegards,\nwebadmin, Leave Management System";
 			$to = $mailid;

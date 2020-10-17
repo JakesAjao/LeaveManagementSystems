@@ -22,10 +22,10 @@ footer {
 </head>
 <body>
 <center>
-<div class="heading"><h1>Leave Management System</h1></div>
+<div class="heading"><h1>Leave Management Systems</h1></div>
 <?php include 'navi.php';?>
 <div class="heading"><h2>Welcome !</h2>
-<p>A Small Leave Management System, fully created in php</p>
+<p>A Small Leave Management Systems, fully created in php</p>
 <p> A Project By projectworlds </p>
 <footer>&copy; 2018, Projectworlds.in</footer>
 </center>
