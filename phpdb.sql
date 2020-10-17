@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.0.2
--- http://www.phpmyadmin.net
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2016 at 12:47 PM
--- Server version: 10.0.17-MariaDB
--- PHP Version: 5.5.30
+-- Generation Time: Oct 17, 2020 at 11:40 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -31,23 +32,21 @@ CREATE TABLE `admins` (
   `username` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
   `Dept` varchar(50) NOT NULL,
-  `SetSickLeave` int(11) NOT NULL DEFAULT '15',
-  `SetCasualLeave` int(11) NOT NULL DEFAULT '10',
-  `SetEarnLeave` int(11) NOT NULL DEFAULT '30'
+  `SetSickLeave` int(11) NOT NULL DEFAULT 15,
+  `SetCasualLeave` int(11) NOT NULL DEFAULT 10,
+  `SetEarnLeave` int(11) NOT NULL DEFAULT 30,
+  `SetMaternityLeave` int(11) NOT NULL DEFAULT 40,
+  `SetPaternityLeave` int(11) NOT NULL DEFAULT 7,
+  `SetAnnualLeave` int(11) NOT NULL DEFAULT 20
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `username`, `password`, `Dept`, `SetSickLeave`, `SetCasualLeave`, `SetEarnLeave`) VALUES
-(1, 'ce_hod', '4e71ec6e6f0bf98ed88fc210f945ec9dc5897f46', 'CE', 20, 25, 10),
-(2, 'it_hod', '5ad239cb8a44f659eaaee0aa1ea5b94947abe557', 'IT', 11, 11, 11),
-(3, 'mh_hod', '8ead6354003c3f4fa80c692081bc8265af11220e', 'MH', 15, 10, 30),
-(4, 'ec_hod', '69e8ee2d1cc1f429960a8637125d15e19e9daa8b', 'EC', 15, 10, 30),
-(5, 'ic_hod', '8723baf2cf4683b85ee1c815495dd27835ab6fa7', 'IC', 15, 10, 30),
-(6, 'cl_hod', 'ef4999d1761ed18bf1a96c80fe81a0a117cace25', 'CL', 15, 10, 30),
-(7, 'ch_hod', '72c5a4143e012d2d999449d7d42bbc63d5693779', 'CH', 15, 10, 30);
+INSERT INTO `admins` (`id`, `username`, `password`, `Dept`, `SetSickLeave`, `SetCasualLeave`, `SetEarnLeave`, `SetMaternityLeave`, `SetPaternityLeave`, `SetAnnualLeave`) VALUES
+(7, 'william', 'William', 'HR', 2, 5, 30, 40, 7, 20),
+(10, 'jacob', 'jacob', 'MIT', 2, 4, 9, 40, 7, 20);
 
 -- --------------------------------------------------------
 
@@ -68,11 +67,22 @@ CREATE TABLE `employees` (
   `DateOfJoin` date NOT NULL,
   `Random` int(15) NOT NULL,
   `Designation` varchar(40) NOT NULL,
-  `EmpFee` varchar(40) NOT NULL,
+  `Supervisor` varchar(40) NOT NULL,
   `EmpType` varchar(40) NOT NULL,
   `UpdateStatus` date NOT NULL,
-  `DateOfBirth` date NOT NULL
+  `DateOfBirth` date NOT NULL,
+  `MaternityLeave` int(5) UNSIGNED NOT NULL,
+  `PaternityLeave` int(5) UNSIGNED NOT NULL,
+  `AnnualLeave` int(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `UserName`, `EmpPass`, `EmpName`, `EmpEmail`, `Dept`, `EarnLeave`, `SickLeave`, `CasualLeave`, `DateOfJoin`, `Random`, `Designation`, `Supervisor`, `EmpType`, `UpdateStatus`, `DateOfBirth`, `MaternityLeave`, `PaternityLeave`, `AnnualLeave`) VALUES
+(18, 'kunle', 'kunle', 'kunle Ayo', 'jacobajao09@gmail.com', 'MIT', 9, 2, 4, '2018-01-01', 0, 'Developer', 'blessing', 'Permanent', '0000-00-00', '1995-01-01', 40, 4, 15),
+(20, 'frank', 'frank', 'Frank Edoho', 'frank@gmail.com', 'MIT', 9, 2, 4, '2019-01-01', 0, 'Developer', 'Jacob', 'Permanent', '0000-00-00', '1995-01-01', 38, 7, 20);
 
 -- --------------------------------------------------------
 
@@ -84,13 +94,49 @@ CREATE TABLE `emp_leaves` (
   `id` int(11) NOT NULL,
   `EmpName` varchar(50) NOT NULL,
   `LeaveType` varchar(60) NOT NULL,
-  `RequestDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `RequestDate` datetime NOT NULL DEFAULT current_timestamp(),
   `LeaveDays` int(11) NOT NULL,
-  `Status` varchar(20) NOT NULL DEFAULT 'Requested',
+  `Status` varchar(20) NOT NULL DEFAULT 'Pending',
   `StartDate` date NOT NULL,
   `EndDate` date NOT NULL,
   `Dept` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `emp_leaves`
+--
+
+INSERT INTO `emp_leaves` (`id`, `EmpName`, `LeaveType`, `RequestDate`, `LeaveDays`, `Status`, `StartDate`, `EndDate`, `Dept`) VALUES
+(22, 'Frank Edoho', 'Annual Leave', '2020-10-17 10:21:43', 1, 'Rejected', '2020-11-01', '2020-11-02', 'MIT'),
+(23, 'Frank Edoho', 'Maternity Leave', '2020-10-17 10:28:50', 2, 'Granted', '2020-11-01', '2020-11-03', 'MIT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supervisor`
+--
+
+CREATE TABLE `supervisor` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `Dept` varchar(50) NOT NULL,
+  `SetSickLeave` int(11) NOT NULL DEFAULT 15,
+  `SetCasualLeave` int(11) NOT NULL DEFAULT 10,
+  `SetEarnLeave` int(11) NOT NULL DEFAULT 30,
+  `SetMaternityLeave` int(11) NOT NULL DEFAULT 40,
+  `SetPaternityLeave` int(11) NOT NULL DEFAULT 7,
+  `SetAnnualLeave` int(11) NOT NULL DEFAULT 20
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supervisor`
+--
+
+INSERT INTO `supervisor` (`id`, `username`, `password`, `Dept`, `SetSickLeave`, `SetCasualLeave`, `SetEarnLeave`, `SetMaternityLeave`, `SetPaternityLeave`, `SetAnnualLeave`) VALUES
+(4, 'blessing', 'blessing', 'Contact Center', 5, 2, 30, 40, 7, 20),
+(5, 'sidi', 'sidi', 'HR', 5, 2, 1, 40, 7, 20),
+(10, 'jacob', 'jacob', 'MIT', 2, 4, 9, 40, 7, 20);
 
 --
 -- Indexes for dumped tables
@@ -115,6 +161,12 @@ ALTER TABLE `emp_leaves`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `supervisor`
+--
+ALTER TABLE `supervisor`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -122,17 +174,27 @@ ALTER TABLE `emp_leaves`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `emp_leaves`
 --
 ALTER TABLE `emp_leaves`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `supervisor`
+--
+ALTER TABLE `supervisor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
