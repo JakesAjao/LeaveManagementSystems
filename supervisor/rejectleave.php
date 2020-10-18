@@ -24,7 +24,7 @@ else
 	{
 		header('location:home.php');
 	}
-if(isset($_SESSION['supernavi']))
+if(isset($_SESSION['superuser']))
 	{
 	
 	$sql = "SELECT * FROM emp_leaves WHERE id='".$id."'";

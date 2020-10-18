@@ -24,7 +24,7 @@ else
 	{
 		header('location:home.php');
 	}
-if(isset($_SESSION['adminuser']))
+if(isset($_SESSION['superuser']))
 	{
 	$sql = "SELECT id,EmpName,LeaveType,RequestDate,Status,LeaveDays,StartDate,EndDate FROM emp_leaves WHERE id='".$id."'";
 	$result = $conn->query($sql);
