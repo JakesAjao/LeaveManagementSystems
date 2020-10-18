@@ -1,9 +1,4 @@
-# Leave Management System
-
-more free projects - https://projectworlds.in
-
-YouTube -   https://youtu.be/WmQ2dywzTy4
-
+# Leave Management Systems
 
 This project is my first Web Application project in PHP. 
 
@@ -15,20 +10,21 @@ Throgh this project I learnt the following:
 
 ## About The Project
 
-In this project, the members are creating a leave management system. The project has
-the following components:
+In this project, the members are creating a leave management systemS. The project has
+the following modules:
 
-  1. **CLIENT CONSOLE**
-  2. **ADMIN MANAGEMENT CONSOLE**
-  3. **CLIENT REGISTRATION COMPONENT**
+  1. **EMPLOYEE MODULE**
+  2. **ADMIN MANAGEMENT MODULE**
+  3. **EMPLOYEE REGISTRATION MODULE**
+  4. **SUPERVISOR REGISTRATION MODULE
   
-Before accessing the **CLIENT CONSOLE**, the client has to register himself/herself using
-the **CLIENT REGISTRATION COMPONENT**. The registration component consists of a
+Before accessing the **EMPLOYEE MODULE**, the MODULE has to register himself using
+the **EMPLOYEE REGISTRATION MODULE**. The registration component consists of a
 simple HTML form and the confirmation page for the same. Also, the registration details
 of the same are mailed to the client’s registered email address. The mail feature is
 present in all the three components and is used as required.
 
-The **CLIENT CONSOLE** consists of the following features:
+The **EMPLOYEE MODULE** consists of the following features:
 
   1. Requesting for a leave
   2. Password recovery option (through email)
