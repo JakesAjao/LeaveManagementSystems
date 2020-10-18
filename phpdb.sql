@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2020 at 11:40 AM
+-- Generation Time: Oct 18, 2020 at 11:02 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -45,7 +45,6 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`, `Dept`, `SetSickLeave`, `SetCasualLeave`, `SetEarnLeave`, `SetMaternityLeave`, `SetPaternityLeave`, `SetAnnualLeave`) VALUES
-(7, 'william', 'William', 'HR', 2, 5, 30, 40, 7, 20),
 (10, 'jacob', 'jacob', 'MIT', 2, 4, 9, 40, 7, 20);
 
 -- --------------------------------------------------------
@@ -81,8 +80,7 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `UserName`, `EmpPass`, `EmpName`, `EmpEmail`, `Dept`, `EarnLeave`, `SickLeave`, `CasualLeave`, `DateOfJoin`, `Random`, `Designation`, `Supervisor`, `EmpType`, `UpdateStatus`, `DateOfBirth`, `MaternityLeave`, `PaternityLeave`, `AnnualLeave`) VALUES
-(18, 'kunle', 'kunle', 'kunle Ayo', 'jacobajao09@gmail.com', 'MIT', 9, 2, 4, '2018-01-01', 0, 'Developer', 'blessing', 'Permanent', '0000-00-00', '1995-01-01', 40, 4, 15),
-(20, 'frank', 'frank', 'Frank Edoho', 'frank@gmail.com', 'MIT', 9, 2, 4, '2019-01-01', 0, 'Developer', 'Jacob', 'Permanent', '0000-00-00', '1995-01-01', 38, 7, 20);
+(24, 'pat', 'pat', 'Pat Utomi', 'pat@fcmb.com', 'MIT', 9, 2, 4, '2020-01-01', 0, 'Developer', 'blessing', 'Permanent', '0000-00-00', '1989-01-01', 40, 7, 19);
 
 -- --------------------------------------------------------
 
@@ -107,8 +105,7 @@ CREATE TABLE `emp_leaves` (
 --
 
 INSERT INTO `emp_leaves` (`id`, `EmpName`, `LeaveType`, `RequestDate`, `LeaveDays`, `Status`, `StartDate`, `EndDate`, `Dept`) VALUES
-(22, 'Frank Edoho', 'Annual Leave', '2020-10-17 10:21:43', 1, 'Rejected', '2020-11-01', '2020-11-02', 'MIT'),
-(23, 'Frank Edoho', 'Maternity Leave', '2020-10-17 10:28:50', 2, 'Granted', '2020-11-01', '2020-11-03', 'MIT');
+(26, 'Pat Utomi', 'Annual Leave', '2020-10-18 21:01:52', 1, 'Granted', '2020-11-01', '2020-11-02', 'MIT');
 
 -- --------------------------------------------------------
 
@@ -126,17 +123,16 @@ CREATE TABLE `supervisor` (
   `SetEarnLeave` int(11) NOT NULL DEFAULT 30,
   `SetMaternityLeave` int(11) NOT NULL DEFAULT 40,
   `SetPaternityLeave` int(11) NOT NULL DEFAULT 7,
-  `SetAnnualLeave` int(11) NOT NULL DEFAULT 20
+  `SetAnnualLeave` int(11) NOT NULL DEFAULT 20,
+  `EmpEmail` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `supervisor`
 --
 
-INSERT INTO `supervisor` (`id`, `username`, `password`, `Dept`, `SetSickLeave`, `SetCasualLeave`, `SetEarnLeave`, `SetMaternityLeave`, `SetPaternityLeave`, `SetAnnualLeave`) VALUES
-(4, 'blessing', 'blessing', 'Contact Center', 5, 2, 30, 40, 7, 20),
-(5, 'sidi', 'sidi', 'HR', 5, 2, 1, 40, 7, 20),
-(10, 'jacob', 'jacob', 'MIT', 2, 4, 9, 40, 7, 20);
+INSERT INTO `supervisor` (`id`, `username`, `password`, `Dept`, `SetSickLeave`, `SetCasualLeave`, `SetEarnLeave`, `SetMaternityLeave`, `SetPaternityLeave`, `SetAnnualLeave`, `EmpEmail`) VALUES
+(4, 'blessing', 'blessing', 'Contact Center', 5, 2, 30, 40, 7, 20, '');
 
 --
 -- Indexes for dumped tables
@@ -180,19 +176,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `emp_leaves`
 --
 ALTER TABLE `emp_leaves`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `supervisor`
 --
 ALTER TABLE `supervisor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
